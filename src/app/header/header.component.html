@@ -1,0 +1,40 @@
+<div>
+  <ng-container *ngIf="!isLogged">
+      <div>
+        <label>Username</label>
+        <input type="text"[(ngModel)]="username">
+      </div>
+      <div>
+        <label></label>
+        <input type="password" [(ngModel)]="password">
+      </div>
+      <button (click)="logIn()">LOG IN</button>
+      <div>
+        <label>New Username</label>
+        <input type="text" [(ngModel)]="signUpName">
+      </div>
+      <div>
+        <label>E-mail</label>
+        <input type="text" [(ngModel)]="email">
+      </div>
+        <label>Password</label>
+        <input type="password" [(ngModel)]="signUpPassword">
+      <button class="but" (click)="signUp()">SIGN UP</button>
+  </ng-container>
+  <ng-container *ngIf="isLogged">
+    <h4>WELCOME, {{loggedUsername}}</h4>
+    <div>
+      <button routerLink="/">HOME</button>
+    </div>
+    <div>
+      <button routerLink="/posts/">POSTS</button>
+    </div>
+    <div>
+      <button routerLink="/users/">USERS and ALBUMS</button>
+    </div>
+    <div>
+      <button (click)="logout()">LOG OUT</button>
+    </div>
+  </ng-container>
+  <router-outlet></router-outlet>
+</div>

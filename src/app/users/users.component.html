@@ -1,0 +1,14 @@
+USERS:
+<div *ngFor="let user of users">
+<span routerLink="/users/{{user.id}}">
+          Username: {{user.username}}, Email: {{user.email}}
+        </span>
+</div>
+
+<app-albums>
+  <div *ngFor="let album of albums">
+    <span routerLink="/albums/{{album.id}}/photos">
+      {{album.title}}
+    </span>
+  </div>
+</app-albums>

@@ -1,0 +1,8 @@
+<h3>{{user.username}}</h3>
+
+<h4>{{user.name}}'s albums</h4>
+
+Albums:
+<div *ngFor="let album of albums">
+  <span routerLink="/albums/{{album.id}}/photos">{{album.title}}</span>
+</div>
